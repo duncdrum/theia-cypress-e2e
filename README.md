@@ -1,5 +1,5 @@
 ### The basic e2e test project which based on Cypress and TypeScript
-* Requirements:
+#####Requirements:
 
 - Preinstalled nodejs : [more details here](https://nodejs.org/en/download/package-manager)
 - Preinstalled npm : [more details here](https://www.npmjs.com/get-npm)
