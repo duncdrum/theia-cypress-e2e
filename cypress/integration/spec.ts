@@ -25,7 +25,9 @@ context('Wait and open prject file', () => {
     cy.get('div#theia-app-shell', { timeout: 12000 });
     cy.theiaInvokeCommandFromMenu(TheiaCommands.VIEW, TheiaCommands.FIND_COMMAND);
     cy.get('div.monaco-inputbox>div.wrapper>input.input').type('git clone').then(() => {
-      cy.get('div.quick-open-tree span.monaco-highlighted-label').contains('Git:').click();
+      cy.get('div.quick-open-tree span.monaco-highlighted-label').contains('Git:').click().then(() => {
+        cy.get('div.monaco-icon-label-description-container').should('contain', 'Please provide a Git repository location.');
+      });
     });
   })
 });
