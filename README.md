@@ -7,7 +7,9 @@
 
 * Before launching tests - get all dependencies with npm install --save-dev command
 
+
 ##### Launching tests with  Cypress IDE
+* Run Theia locally on default port 3000
 * Open Cypress from the current project  (we can use command like: `./node_modules/.bin/cypress open` or another way bore details [here:](https://docs.cypress.io/guides/getting-started/installing-cypress.html#Opening-Cypress)
 click on spec.ts file. We can watch the test with Cypress runner  
 
