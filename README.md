@@ -5,7 +5,7 @@
 - Preinstalled npm : [more details here](https://www.npmjs.com/get-npm)
 - Preinstalled Cypress. [More instructions for installing here:](https://docs.cypress.io/guides/getting-started/installing-cypress.html#System-requirements)
 
-* Before launching tests - get all dependencies with npm install --save-dev command
+* Before launching tests - get all dependencies with: `npm install --save-dev command`
 
 
 ##### Launching tests with  Cypress IDE
