@@ -1,9 +1,3 @@
-import { TheiaCommands } from "../elements/theia-commands";
-import { TheiaTabBarItems } from "../elements/theia-tab-bar-items";
-import { GitDockPanelPageObject } from "../elements/git-dock-panel";
-
-
-
 /*********************************************************************
  * Copyright (c) 2018 Red Hat, Inc.
  *
@@ -14,6 +8,11 @@ import { GitDockPanelPageObject } from "../elements/git-dock-panel";
  * SPDX-License-Identifier: EPL-2.0
  **********************************************************************/
 
+import { TheiaCommands } from "../elements/theia-commands";
+import { TheiaTabBarItems } from "../elements/theia-tab-bar-items";
+import { GitDockPanelPageObject } from "../elements/git-dock-panel";
+
+
 
 context('Clone project into Theia and commit project file', () => {
   let pathToClonedProject: string = Cypress.env('rootPath') + "/" + Cypress.env('projectName');
@@ -21,7 +20,6 @@ context('Clone project into Theia and commit project file', () => {
   before(() => {
     cy.visit(Cypress.env('baseUrl') + "/#" + Cypress.env('rootPath'));
   })
-
   //first test body   
   it('Open predefined workspace and clone the test project', () => {
     let gitDockerPanel = new GitDockPanelPageObject();
@@ -53,6 +51,7 @@ context('Clone project into Theia and commit project file', () => {
 
   //third test body 
   it('Commit changes to github side', () => {
+    
     let currentDateInMillisec = new Date().valueOf().toString();
     let gitDockerPanel = new GitDockPanelPageObject();
     cy.get('div#theia-app-shell', { timeout: 12000 });
@@ -62,10 +61,15 @@ context('Clone project into Theia and commit project file', () => {
     gitDockerPanel.clickOnMoreItemAndSelecItem(GitDockPanelPageObject.GIT_MORE_MENU_COMMIT_SIGNED_OFF_ITEM);
     gitDockerPanel.clickOnMoreItemAndSelecItem(GitDockPanelPageObject.GIT_MORE_MENU_PUSH_ITEM);
     cy.get('div.monaco-inputbox>div.wrapper>input.input').type('origin').type('{enter}');
+   cy.request('GET', 'https://api.github.com/repos/maxura/simple-ts-module/readme').
+      then((resp) => {
+        expect(atob(resp.body.content).toString()).to.include('simple');
+   });
   });
 
-  after(() => {
-   cy.exec('rm -rf ' + pathToClonedProject);
-  })
 
-});
+    after(() => {
+      cy.exec('rm -rf ' + pathToClonedProject);
+    })
+
+  });
