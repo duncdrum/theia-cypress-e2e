@@ -17,16 +17,16 @@
 //click on top nenu with  @topCommandName command and then click on @subCommandName in the opened command list
 Cypress.Commands.add('theiaInvokeCommandFromMenu', (topCommandName: string, subCommandName: string) => {
   cy.get('div.p-MenuBar-itemLabel').contains(topCommandName).click().then(() => {
-  cy.get('div.p-Menu-itemLabel').contains(subCommandName).trigger('mousemove').click();
- });
+    cy.get('div.p-Menu-itemLabel').contains(subCommandName).trigger('mousemove').click();
+  });
 });
 
 //click an item in Theia project tree by asolute path to item 
 Cypress.Commands.add('openItemByPathInProjectTree', (pathToItem: string) => {
-   cy.get(`div.theia-TreeNode[title="${pathToItem}"]`).click();
+  cy.get(`div.theia-TreeNode[title="${pathToItem}"]`).click();
 });
 
-//click an item in Theia project tree by asolute path to item 
+//click on item on left Theia tab bar
 Cypress.Commands.add('openLeftTabBarItemByName', (tabBarItemName: string) => {
   cy.get(`ul.p-TabBar-content>li[title='${tabBarItemName}'][style~='height:']`).click();
 });
@@ -39,10 +39,8 @@ declare namespace Cypress {
   // tslint:disable-next-line interface-name
   interface Chainable {
     theiaInvokeCommandFromMenu: (topCommandName: string, subCommandName: string) => void
-    openItemByPathInProjectTree: (pathToItem: string )=> void
+    openItemByPathInProjectTree: (pathToItem: string) => void
     openLeftTabBarItemByName: (tabBarItemName: string) => void
   }
-
-
 }
 
