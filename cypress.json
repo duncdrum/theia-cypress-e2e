@@ -3,6 +3,10 @@
   "env": {
     "baseUrl": "http://localhost:3000",
     "rootPath": "/tmp/e2e",
-    "projectName":"simple-ts-module"
+    "projectName":"simple-ts-module", 
+    "authToken": "c3cf151538a138d594f585d76fffde07f338cbbc",
+    "gitApiPreffix": "https://api.github.com",
+    "githubOwnerPreffix": "maxura",
+    "gitHubTestRepo":"simple-ts-module"
   }
 }
