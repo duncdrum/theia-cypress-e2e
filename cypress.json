@@ -4,7 +4,7 @@
     "baseUrl": "http://localhost:3000",
     "rootPath": "/tmp/e2e",
     "projectName":"simple-ts-module", 
-    "authToken": "c3cf151538a138d594f585d76fffde07f338cbbc",
+    "authToken": "your_personal_acess_token",
     "gitApiPreffix": "https://api.github.com",
     "githubOwnerPreffix": "maxura",
     "gitHubTestRepo":"simple-ts-module"

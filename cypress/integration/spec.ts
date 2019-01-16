@@ -92,6 +92,9 @@ context('Clone project into Theia and commit project file', () => {
   });
 
   after(() => {
+    // remove cloned project on a file system
+    cy.exec('rm -rf ' + pathToClonedProject);
+    
     // reset content in changed file after testing
     cy.request('GET', gitHubReadMeFileApiUrl).then(reguest => {
       const sha = reguest.body.sha.toString();
@@ -106,8 +109,6 @@ context('Clone project into Theia and commit project file', () => {
       }
       cy.request('PUT', getGitHubUrlForUpdatingContent(), content);
     });
-    // remove cloned project on a file system
-    cy.exec('rm -rf ' + pathToClonedProject);
   })
 });
 
