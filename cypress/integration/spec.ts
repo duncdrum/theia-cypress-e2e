@@ -73,7 +73,7 @@ context('Clone project into Theia and commit project file', () => {
   // Add to index, commit, push changes. Check the changes on GitHub side by Github API
   it('Commit changes to github side', () => {
 
-    let gitDockerPanel = new GitDockPanelPageObject();
+    const gitDockerPanel = new GitDockPanelPageObject();
 
     cy.get('div#theia-app-shell', { timeout: 12000 });
     cy.openLeftTabBarItemByName(TheiaTabBarItems.GIT);
