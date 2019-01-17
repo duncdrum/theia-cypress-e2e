@@ -1,12 +1,12 @@
 ### The basic e2e test project which based on Cypress and TypeScript
-#####Requirements:
+##### Requirements:
 
 - Preinstalled nodejs : [more details here](https://nodejs.org/en/download/package-manager)
 - Preinstalled npm : [more details here](https://www.npmjs.com/get-npm)
 - Preinstalled Cypress. [More instructions for installing here:](https://docs.cypress.io/guides/getting-started/installing-cypress.html#System-requirements)
 
-* Before launching tests - get all dependencies with: `npm install --save-dev command`
-
+* Before launching tests - get all dependencies with: `npm install --save-dev command` prepare a workspase for Theia. Create predefined folder (for instanse /tmp/e2e)
+* Set up env. variables for the test in `cypress.json file` (or use predifined settings)
 
 ##### Launching tests with  Cypress IDE
 * Run Theia locally on default port 3000
